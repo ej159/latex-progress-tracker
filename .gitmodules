@@ -1,0 +1,3 @@
+[submodule "latex-progress-tracker-data"]
+	path = latex-progress-tracker-data
+	url = git@github.com:ej159/latex-progress-tracker-data.git

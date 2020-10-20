@@ -6,7 +6,7 @@ import os
 import sys
 import numpy as np
 import seaborn as sns
-savedir = os.getcwd()+"/"
+savedir = os.getcwd()+"/latex-progress-tracker-data/"
 output_format = ".png"
 
 df = pd.read_csv(os.getcwd()+"/"+sys.argv[1])

@@ -8,7 +8,7 @@ echo "Updating progress"
 TEX_PATH='/home/edwardjones/git/Thesis'
 TEX_DOC=${TEX_PATH}'/main.tex'
 DOCUMENT='/home/edwardjones/git/Thesis/main.pdf'
-PROGRESSFILE='progress.csv'
+PROGRESSFILE='latex-progress-tracker-data/progress.csv'
 
 
 # Setup CSV if it doesn't exist
