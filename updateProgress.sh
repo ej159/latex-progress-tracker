@@ -8,7 +8,14 @@ echo "Updating progress"
 TEX_PATH='/home/edwardjones/git/Thesis'
 TEX_DOC=${TEX_PATH}'/main.tex'
 DOCUMENT='/home/edwardjones/git/Thesis/main.pdf'
-PROGRESSFILE='latex-progress-tracker-data/progress.csv'
+OUTPUTDIR='/home/edwardjones/git/latex-progress-tracker/latex-progress-tracker-data'
+PROGRESSFILE=${OUTPUTDIR}'/progress.csv'
+HERE=$(pwd)
+
+
+cd $TEX_PATH
+git pull 
+cd $HERE
 
 
 # Setup CSV if it doesn't exist
@@ -36,3 +43,9 @@ echo `date '+%Y-%m-%d %H:%M:%S'`,$WORDCOUNT,$PAGECOUNT >> $PROGRESSFILE
 echo "Done! Page count ${PAGECOUNT}, word count ${WORDCOUNT}. Written to ${PROGRESSFILE}"
 
 python plotProgress.py ${PROGRESSFILE}
+cd $OUTPUTDIR
+git add progress.csv
+timestamp=$(date +"%F %T")
+git commit -m "Autocommit $timestamp" 
+git push 
+cd ..
