@@ -7,7 +7,7 @@ import sys
 import numpy as np
 import seaborn as sns
 savedir = os.getcwd()+"/latex-progress-tracker-data/"
-output_format = ".png"
+output_format = ".pdf"
 
 df = pd.read_csv(sys.argv[1])
 df['timestamp_fixed'] = pd.to_datetime(df['timestamp'], format="%Y-%m-%d %H:%M:%S")
