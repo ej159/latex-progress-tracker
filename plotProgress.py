@@ -31,6 +31,10 @@ df.plot(y='wordcount', legend=None, ax=ax2, color=wc_color)
 
 ax.set_ylabel("Page Count", fontsize=16, color=pc_color)
 ax2.set_ylabel("Word Count", fontsize=16,color=wc_color)
+ax.axhline(y=150, color=pc_color, linestyle=':')
+ax2.axhline(y=80000, color=wc_color, linestyle='--')
+
+
 ax.set_xlabel('Date',fontsize=16)
 ax.set_ylim(ymin=0)
 ax2.set_ylim(ymin=0)
@@ -64,6 +68,11 @@ fig = plt.gcf()
 fig.set_size_inches(2*fig.get_figheight(),fig.get_figheight(),forward=True)
 plt.savefig(savedir+"progress_twitter"+output_format)
 plt.close()
+
+
+def add_final_sizes(axis, size):
+    ax.axhline(y=size, )
+
 
 ##### Time Delta Plot ####
 def make_pages_plot(axis):
